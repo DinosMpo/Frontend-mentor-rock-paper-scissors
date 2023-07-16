@@ -1,0 +1,13 @@
+import React from 'react'
+
+const title = () => {
+  return (
+    <div className="title-container">
+        <div className="">ROCK</div>
+        <div>PAPER</div>
+        <div>SCISSORS</div>
+    </div>
+  )
+}
+
+export default title
