@@ -4,7 +4,7 @@ const score = () => {
   return (
     <div className="score-container">
         <div className="score-title">SCORE</div>
-        <div className="score">12</div>
+        <div className="score">0</div>
     </div>
   )
 }
