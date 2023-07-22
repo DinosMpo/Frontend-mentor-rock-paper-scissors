@@ -1,0 +1,26 @@
+.result-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-wrap: column nowrap; */
+    /* width: 500px; */
+    text-align: center;
+  }
+  
+  .result {
+    width:100%;
+    display: block;
+    color: white;
+    letter-spacing: 2px;
+    font-size: 60px;
+    font-weight: 700;
+  }
+  
+  .play-again {
+    color: red;
+    background-color: white;
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 15px;
+    cursor: pointer;
+  }
