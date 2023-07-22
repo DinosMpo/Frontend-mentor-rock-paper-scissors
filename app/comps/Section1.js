@@ -1,12 +1,12 @@
 import React from 'react'
 import Title from './title'
-import Score from './score'
+import Score from './Score'
 
-const Section1 = () => {
+const Section1 = ({score}) => {
   return (
     <div className="section-1">
         <Title />
-        <Score />
+        <Score score={score}/>
     </div>
   )
 }
