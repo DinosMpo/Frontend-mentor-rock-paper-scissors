@@ -1,8 +1,8 @@
-import React from 'react'
+import React, {useState} from 'react'
 
-const Rules = () => {
+const Rules = ({showRules}) => {
   return (
-    <div className='rules'>RULES</div>
+    <div className='rules' onClick={() => showRules()}>RULES</div>
   )
 }
 
