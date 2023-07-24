@@ -1,10 +1,10 @@
 import React from 'react'
 import Rules from './Rules';
 
-const Section3 = () => {
+const Section3 = ({showRules}) => {
   return (
     <div className='section-3'>
-        <Rules />
+        <Rules showRules={showRules}/>
     </div>
   )
 }

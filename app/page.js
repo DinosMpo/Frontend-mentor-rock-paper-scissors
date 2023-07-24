@@ -1,15 +1,12 @@
 "use client"
 
 import { useState } from 'react'
-import Image from 'next/image'
 import Section1 from './comps/Section1'
 import Section3 from './comps/Section3'
 import Choice from './comps/Choice'
-import Rules from './comps/Rules'
-import FinalChoice from './comps/FinalChoice'
 import ComputerChoice from './comps/ComputerChoice'
 import ChoiceContainer from './comps/ChoiceContainer'
-import WinnerEffect from './comps/WinnerEffect'
+import ActiveRules from './comps/ActiveRules'
 import Result from './comps/Result'
 
 
@@ -20,6 +17,8 @@ export default function Home() {
   const listOfChoices = ['paper', 'rock', 'scissors'];
   let computerChoice = '';
   let result = '';
+  const [activeRules, setActiveRules] = useState(false);
+
   
   //rules are
   //paper wins rock and lose from scissors 
@@ -70,6 +69,14 @@ export default function Home() {
     computerChoice = listOfChoices[Math.floor((Math.random() * listOfChoices.length))];
   }
 
+  const showRules = () => {
+    if(activeRules) {
+      setActiveRules(false);
+    }else {
+      setActiveRules(true);
+    }
+  }
+
   if(choice != '') {
     randomComputerChoice();
     checkResult();
@@ -77,6 +84,9 @@ export default function Home() {
 
   return choice === "" ? (
     <main className="wrapper">
+      {
+        activeRules ? <ActiveRules showRules={showRules}/> : <div></div>    
+      }
       <Section1 score={score}/>
       <div className='section-2'>
         <div className='two-choice-container'>
@@ -90,13 +100,16 @@ export default function Home() {
         
       </div>
 
-      <Section3 />
+      <Section3 showRules={showRules}/>
       
     </main>
   )
   :
   (
     <main className="wrapper">
+      {
+        activeRules ? <ActiveRules showRules={showRules}/> : <div></div>    
+      }
       <Section1 score={score}/>
       <div className='choices-container'>
         
@@ -112,7 +125,7 @@ export default function Home() {
         </div>
 
       </div>
-      <Section3 />
+      <Section3 showRules={showRules}/>
     </main>
   )
 }
