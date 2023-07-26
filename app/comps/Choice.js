@@ -3,8 +3,6 @@ import Image from 'next/image'
 import { useState } from 'react'
 
 const Choice = ({ choice , setChoice}) => {
-  // const []
-
   return (
     <div onClick={() => setChoice(choice)} className="choice inner-circle">
         <div className={`outer-circle ${choice}-choice`}>
