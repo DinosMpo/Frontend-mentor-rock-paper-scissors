@@ -6,20 +6,16 @@ import Section3 from './comps/Section3'
 import Choice from './comps/Choice'
 import ComputerChoice from './comps/ComputerChoice'
 import ChoiceContainer from './comps/ChoiceContainer'
-import ActiveRules from './comps/ActiveRules'
 import Result from './comps/Result'
 
-
 let score = 0;
+let result = "";
 
 export default function Home() {
   const [choice, setChoice] = useState("");
   const listOfChoices = ['paper', 'rock', 'scissors'];
   let computerChoice = '';
-  let result = '';
-  const [activeRules, setActiveRules] = useState(false);
 
-  
   //rules are
   //paper wins rock and lose from scissors 
   //rock wins scissors and lose from paper 
@@ -69,14 +65,6 @@ export default function Home() {
     computerChoice = listOfChoices[Math.floor((Math.random() * listOfChoices.length))];
   }
 
-  const showRules = () => {
-    if(activeRules) {
-      setActiveRules(false);
-    }else {
-      setActiveRules(true);
-    }
-  }
-
   if(choice != '') {
     randomComputerChoice();
     checkResult();
@@ -84,9 +72,6 @@ export default function Home() {
 
   return choice === "" ? (
     <main className="wrapper">
-      {
-        activeRules ? <ActiveRules showRules={showRules}/> : <div></div>    
-      }
       <Section1 score={score}/>
       <div className='section-2'>
         <div className='two-choice-container'>
@@ -100,16 +85,13 @@ export default function Home() {
         
       </div>
 
-      <Section3 showRules={showRules}/>
+      <Section3/>
       
     </main>
   )
   :
   (
     <main className="wrapper">
-      {
-        activeRules ? <ActiveRules showRules={showRules}/> : <div></div>    
-      }
       <Section1 score={score}/>
       <div className='choices-container'>
         
@@ -125,7 +107,7 @@ export default function Home() {
         </div>
 
       </div>
-      <Section3 showRules={showRules}/>
+      <Section3/>
     </main>
   )
 }
