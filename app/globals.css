@@ -139,6 +139,7 @@ body {
 .section-3 {
   display: flex;
   width: 100%;
+  max-width: 1330px;
   justify-content: right;
 }
 
@@ -152,7 +153,6 @@ body {
   align-items: center;
   border-radius: 10px;
   letter-spacing: 2px;
-  margin-right: 30px;
   cursor: pointer;
 }
 
