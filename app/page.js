@@ -4,9 +4,11 @@ import { useState } from 'react'
 import Section1 from './comps/Section1'
 import Section3 from './comps/Section3'
 import Choice from './comps/Choice'
-import ComputerChoice from './comps/ComputerChoice'
-import ChoiceContainer from './comps/ChoiceContainer'
+import UserChoiceContainer from './comps/UserChoiceContainer'
+import ComputerChoiceContainer from './comps/ComputerChoiceContainer'
 import Result from './comps/Result'
+import BackgroundImage from './comps/BackgroundImage'
+import MobileResult from './comps/MobileResult'
 
 let score = 0;
 let result = "";
@@ -74,6 +76,7 @@ export default function Home() {
     <main className="wrapper">
       <Section1 score={score}/>
       <div className='section-2'>
+        <BackgroundImage />
         <div className='two-choice-container'>
           <Choice className="paper-choice" choice="paper" setChoice={setChoice}/>
           <Choice className="scissors-choice" choice="scissors" setChoice={setChoice}/>
@@ -95,18 +98,15 @@ export default function Home() {
       <Section1 score={score}/>
       <div className='choices-container'>
         
-        <ChoiceContainer choice={ choice } result={ result }/>
+        <UserChoiceContainer choice={ choice } result={ result }/>
 
         <Result result={result} setChoice={setChoice}/>
 
-        <div className='choice-container'>
-          <div className='computer-choice-title'>THE HOUSE PICKED</div>
-          <div className='choice-wrapper'>
-            <ComputerChoice choice={ computerChoice } result={ result }f/>
-          </div>
-        </div>
+        <ComputerChoiceContainer choice={ computerChoice } result={ result }/>
 
       </div>
+      <MobileResult result={result} setChoice={setChoice}/>
+
       <Section3/>
     </main>
   )
