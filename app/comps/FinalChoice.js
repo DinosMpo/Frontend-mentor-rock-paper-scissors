@@ -10,7 +10,7 @@ const FinalChoice = ({ choice, result }) => {
 
   return youWοn === true ?(
     <div className='choice-wrapper'>
-      {/* <WinnerEffect /> */}
+      <WinnerEffect />
       <div className="final-choice inner-circle">
           <div className={`final-outer-circle final-${choice}-choice`}>
               <Image src={`/icon-${choice}.svg`} alt={choice} width="49" height="59"/>
