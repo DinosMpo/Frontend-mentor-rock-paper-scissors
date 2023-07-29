@@ -1,5 +1,3 @@
-"use client"
-
 import React, { useState } from 'react'
 import Image from 'next/image'
 import WinnerEffect from './WinnerEffect'
@@ -20,15 +18,15 @@ const ComputerChoice = ({ choice, result }) => {
                 return (
                     <div className='final-choice inner-circle'>
                         <div className={`final-outer-circle final-${choice}-choice`}>
-                            <Image src={`/icon-${choice}.svg`} alt={choice} width="119" height="129"/>
+                            <Image src={`./../icon-${choice}.svg`} alt={choice} width="49" height="59"/>
                         </div>
                     </div>)
             }else if(result === 'YOU LOSE') {
                 return (
                     <div className='final-choice inner-circle'>
-                        <WinnerEffect/>
+                        {/* <WinnerEffect/> */}
                         <div className={`final-outer-circle final-${choice}-choice`}>
-                            <Image src={`/icon-${choice}.svg`} alt={choice} width="119" height="129"/>
+                            <Image src={`./../icon-${choice}.svg`} alt={choice} width="49" height="59"/>
                         </div>
                     </div>)
             }

@@ -5,6 +5,7 @@ body {
   background-attachment: fixed;
   font-family: 'Barlow Semi Condensed', sans-serif;
   margin: 0px auto;
+  overflow-x: hidden;
 }
 
 .wrapper {
@@ -22,7 +23,7 @@ body {
   width: 700px;
   height: 150px;
   border: 2px solid hsl(217, 16%, 45%);
-  border-radius: 20px;
+  border-radius: 10px;
   display: flex;
   justify-content:space-between;
   align-items: center;
@@ -30,7 +31,7 @@ body {
 
 .title-container {
   color: white;
-  font-size: 30px;
+  /* font-size: 30px; */
   display: flex;
   justify-content: center;
   align-items: left;
@@ -78,9 +79,11 @@ body {
   margin-top: 60px;
   height: 460px;
   width: 470px;
-  background-image: url('/bg-triangle.svg');
+  /* background-image: url('/bg-triangle.svg'); */
   background-repeat: no-repeat;
   background-position: center;
+  /* border: 1px solid white; */
+  position: relative;
 }
 
 .choice {
@@ -287,3 +290,110 @@ body {
 .active-rules-img {
   margin: auto;
 }
+
+.bg-img-container {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobile-user-choice {
+  display: none;
+}
+
+.mobile-result-container {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  /* flex-wrap: column nowrap; */
+  /* width: 500px; */
+  text-align: center;
+}
+
+.mobile-result {
+  width:100%;
+  display: block;
+  color: white;
+  letter-spacing: 2px;
+  font-size: 60px;
+  font-weight: 700;
+}
+
+.mobile-play-again {
+  color: red;
+  background-color: white;
+  border-radius: 8px;
+  margin: 0px auto;
+  padding: 15px;
+  margin-top: 15px;
+  cursor: pointer;
+  width: 190px;
+}
+
+.mobile-computer-choice {
+  display: none;
+}
+
+.active-mobile-rules-wrapper {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.active-mobile-rules {
+  background-color: white;
+}
+
+.active-mobile-rules-close-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  /* height: 100vh; */
+  
+}
+
+.active-mobile-rules-close {
+  position: absolute;
+  /* right: 32px; */
+  /* top: 32px; */
+
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
+  cursor: pointer;
+}
+.active-mobile-rules-close:hover {
+  opacity: 1;
+}
+.active-mobile-rules-close:before, .active-mobile-rules-close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: #333;
+}
+.active-mobile-rules-close:before {
+  transform: rotate(45deg);
+}
+.active-mobile-rules-close:after {
+  transform: rotate(-45deg);
+}
+
+/* .active-mobile-rules-img {
+  width: 100%;
+  max-width: 304px;
+  height: 100%;
+  max-height: 270px;
+} */

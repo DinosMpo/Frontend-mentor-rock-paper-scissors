@@ -1,0 +1,154 @@
+@media only screen and (max-width: 708px) {
+    /* body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    } */
+
+    .wrapper {
+        justify-content: space-around;
+        /* max-height: 800px; */
+    }
+    
+    .section-1 {
+        width: 312px;
+        height: 100px;
+    }
+
+    .title-container div {
+        font-size: 22px;
+        line-height: 17px;
+    }
+
+    .score-container {
+        height: 80px;
+        width: 80px;
+    }
+
+    .score-title {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .score {
+        font-size: 40px;
+        letter-spacing: 2px;
+        font-weight: 700;
+    }
+
+    .section-2 {
+        margin-top: 0px;
+        height: 300px;
+        width: 313px;
+    }
+    
+    .choice {
+        width: 130px;
+        height: 130px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 150px;
+    }
+    
+    .outer-circle {
+        width: 100px;
+        height: 100px;
+    }
+
+    .paper-choice {
+        border: 15px solid hsl(230, 89%, 65%);
+    }
+
+    .rock-choice {
+        border: 15px solid hsl(349, 70%, 56%);
+    }
+
+    .scissors-choice {
+        border: 15px solid hsl(40, 84%, 53%);
+    }
+
+    .bg-img {
+        width: 225px;
+        height: 190px;
+    }
+
+    .section-3 {
+        justify-content: center;
+    }
+
+    .rules {
+        margin-right: 0px;
+    }
+
+    .desktop-user-choice {
+        display: none;
+    }
+
+    .desktop-computer-choice {
+        display: none;
+    }
+
+    .choice-wrapper {
+        max-height: 400px;
+        height: 100%;
+    }
+
+    .your-choice-title, .computer-choice-title {
+        margin-top: 20px;
+        font-size: 15px;
+      }
+
+    .mobile-result-container {
+        display: flex;
+    }
+
+    .mobile-user-choice {
+        display:block;
+    }
+
+    .mobile-computer-choice {
+        display:block;
+    }
+
+    .choices-container {
+        justify-content: space-around;
+        gap: 0;
+        margin-top: 0px;
+    }
+
+    .final-choice {
+        width: 130px;
+        height: 130px;
+    }
+    
+    .final-outer-circle {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .final-paper-choice {
+        border: 15px solid hsl(230, 89%, 65%);
+    }
+    
+    .final-rock-choice {
+        border: 15px solid hsl(349, 70%, 56%);
+    }
+    
+    .final-scissors-choice {
+        border: 15px solid hsl(40, 84%, 53%);
+    }
+
+    .empty-computer-choice {
+        width: 130px;
+        height: 130px;
+      }
+
+    .active-rules-wrapper {
+        display: none;
+    }
+
+    .active-mobile-rules-wrapper {
+        display: flex;
+    }
+  }
