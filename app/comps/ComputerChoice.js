@@ -24,7 +24,7 @@ const ComputerChoice = ({ choice, result }) => {
             }else if(result === 'YOU LOSE') {
                 return (
                     <div className='final-choice inner-circle'>
-                        {/* <WinnerEffect/> */}
+                        <WinnerEffect/>
                         <div className={`final-outer-circle final-${choice}-choice`}>
                             <Image src={`./../icon-${choice}.svg`} alt={choice} width="49" height="59"/>
                         </div>
