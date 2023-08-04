@@ -11,12 +11,19 @@ import BackgroundImage from './comps/BackgroundImage'
 import MobileResult from './comps/MobileResult'
 
 let score = 0;
+if(typeof window !== 'undefined') {
+  const from_localStorage = window.localStorage.getItem('score');
+  if(from_localStorage === undefined || from_localStorage === null) {
+    score = 0;
+  }
+  `${from_localStorage}` ? score = parseInt(from_localStorage) : score = 0
+}
 let result = "";
+let computerChoice = '';
 
 export default function Home() {
   const [choice, setChoice] = useState("");
   const listOfChoices = ['paper', 'rock', 'scissors'];
-  let computerChoice = '';
 
   //rules are
   //paper wins rock and lose from scissors 
@@ -27,11 +34,9 @@ export default function Home() {
       console.log('it works');
       if(computerChoice ==='rock') {
         result = 'YOU WIN';
-        // setScore(score++);
         score++;
       }else if(computerChoice === 'scissors') {
         result = 'YOU LOSE';
-        // setScore(score--);
         score--;
       }else{
         result = 'DRAW';
@@ -39,11 +44,9 @@ export default function Home() {
     }else if(choice === 'rock') {
       if(computerChoice ==='scissors') {
         result = 'YOU WIN';
-        // setScore(score++);
         score++;
       }else if(computerChoice === 'paper') {
         result = 'YOU LOSE';
-        // setScore(score--);
         score--;
       }else{
         result = 'DRAW';
@@ -51,16 +54,15 @@ export default function Home() {
     }else if(choice === 'scissors') {
       if(computerChoice ==='paper') {
         result = 'YOU WIN';
-        // setScore(score++);
         score++;
       }else if(computerChoice === 'rock') {
         result = 'YOU LOSE';
-        // setScore(score--);
         score--;
       }else{
         result = 'DRAW';
       }
     }
+    localStorage.setItem('score', score);
   }
 
   const randomComputerChoice = () => {
