@@ -1,5 +1,5 @@
 import React from 'react'
-import Title from './title'
+import Title from './Title'
 import Score from './Score'
 
 const Section1 = ({score}) => {

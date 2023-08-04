@@ -9,7 +9,7 @@ const ActiveRules = ({showRules}) => {
             <div className='active-rules-title'>RULES</div>
             <div className='active-rules-close' onClick={() => showRules()}></div>
         </div>
-        <Image className="active-rules-img" src='/image-rules.svg' width={304} height={270}/>
+        <Image className="active-rules-img" alt='image rules' src='/image-rules.svg' width={304} height={270}/>
         </div>
     </div>
   )

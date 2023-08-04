@@ -4,7 +4,7 @@ import Image from 'next/image'
 const BackgroundImage = () => {
   return (
     <div className='bg-img-container'>
-        <Image className='bg-img' src='/bg-triangle.svg' width='313' height='278'/>
+        <Image className='bg-img' alt='bg img' src='/bg-triangle.svg' width='313' height='278'/>
     </div>
   )
 }

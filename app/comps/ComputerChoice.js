@@ -5,7 +5,6 @@ import WinnerEffect from './WinnerEffect'
 const ComputerChoice = ({ choice, result }) => {
     const [showChoice, setShowChoice] = useState(false);
     setTimeout(() => {
-        console.log('eee');
         setShowChoice(true);
     }, 2000);
     let showResult;
@@ -33,7 +32,6 @@ const ComputerChoice = ({ choice, result }) => {
         }
     }   
     
-
     return evaluateResult()
 }
 

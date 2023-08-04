@@ -2,12 +2,11 @@
 
 import { useState } from 'react'
 import Section1 from './comps/Section1'
+import Section2 from './comps/Section2'
 import Section3 from './comps/Section3'
-import Choice from './comps/Choice'
 import UserChoiceContainer from './comps/UserChoiceContainer'
 import ComputerChoiceContainer from './comps/ComputerChoiceContainer'
 import Result from './comps/Result'
-import BackgroundImage from './comps/BackgroundImage'
 import MobileResult from './comps/MobileResult'
 
 let score = 0;
@@ -16,7 +15,8 @@ if(typeof window !== 'undefined') {
   if(from_localStorage === undefined || from_localStorage === null) {
     score = 0;
   }
-  `${from_localStorage}` ? score = parseInt(from_localStorage) : score = 0
+  `${from_localStorage}` != 'null' ? score = from_localStorage : score = 0;
+  console.log(score);
 }
 let result = "";
 let computerChoice = '';
@@ -77,21 +77,8 @@ export default function Home() {
   return choice === "" ? (
     <main className="wrapper">
       <Section1 score={score}/>
-      <div className='section-2'>
-        <BackgroundImage />
-        <div className='two-choice-container'>
-          <Choice className="paper-choice" choice="paper" setChoice={setChoice}/>
-          <Choice className="scissors-choice" choice="scissors" setChoice={setChoice}/>
-        </div>
-        
-        <div className='one-choice'>
-          <Choice className="rock-choice" choice="rock" setChoice={setChoice}/>
-        </div>
-        
-      </div>
-
-      <Section3/>
-      
+      <Section2 setChoice={setChoice} />
+      <Section3/>      
     </main>
   )
   :
@@ -99,16 +86,11 @@ export default function Home() {
     <main className="wrapper">
       <Section1 score={score}/>
       <div className='choices-container'>
-        
         <UserChoiceContainer choice={ choice } result={ result }/>
-
         <Result result={result} setChoice={setChoice}/>
-
         <ComputerChoiceContainer choice={ computerChoice } result={ result }/>
-
       </div>
       <MobileResult result={result} setChoice={setChoice}/>
-
       <Section3/>
     </main>
   )
