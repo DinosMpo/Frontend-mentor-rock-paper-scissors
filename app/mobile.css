@@ -1,13 +1,6 @@
 @media only screen and (max-width: 708px) {
-    /* body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    } */
-
     .wrapper {
         justify-content: space-around;
-        /* max-height: 800px; */
     }
     
     .section-1 {
